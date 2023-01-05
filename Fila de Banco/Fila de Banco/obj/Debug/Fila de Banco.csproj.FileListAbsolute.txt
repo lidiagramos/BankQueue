@@ -1,0 +1,7 @@
+C:\Users\Lídia\Documents\SharpDevelop Projects\Fila de Banco\Fila de Banco\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Lídia\Documents\SharpDevelop Projects\Fila de Banco\Fila de Banco\bin\Debug\Fila de Banco.exe
+C:\Users\Lídia\Documents\SharpDevelop Projects\Fila de Banco\Fila de Banco\bin\Debug\Fila de Banco.pdb
+C:\Users\Lídia\Documents\SharpDevelop Projects\Fila de Banco\Fila de Banco\obj\Debug\Fila de Banco.exe
+C:\Users\Lídia\Documents\SharpDevelop Projects\Fila de Banco\Fila de Banco\obj\Debug\Fila de Banco.pdb
+E:\2° Semestre\C# - Jeferson\Fila de Banco - Jeferson\Fila de Banco\Fila de Banco\obj\Debug\Fila de Banco.exe
+E:\2° Semestre\C# - Jeferson\Fila de Banco - Jeferson\Fila de Banco\Fila de Banco\obj\Debug\Fila de Banco.pdb

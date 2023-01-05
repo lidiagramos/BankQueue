@@ -1,0 +1,190 @@
+///CLASSE PRINCIPAL///
+
+using System;
+
+namespace Fila_de_Banco
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            int escolha = 123;
+            int menu;
+
+            Console.WriteLine("PARA INICIARMOS DIGITE O CÓDIGO DO BANCO (123)");
+            menu = int.Parse(Console.ReadLine());
+            MenuOpcoes MeuMenu = new MenuOpcoes();
+            if (menu == escolha)
+            {
+                bool a = true;
+                while(a == true)
+                {
+                    MeuMenu.VerOpcoes();
+                }
+                
+            }
+
+            else
+            {
+                Console.WriteLine("O comando digitado é inválido!");
+                Console.ReadKey();
+            }
+        }
+    }
+}
+
+///FIM DA CLASSE PRINCIPAL///
+
+
+
+
+
+
+
+///CLASSE MENU OPÇÕES///
+
+using System;
+
+namespace Fila_de_Banco
+{
+    public class MenuOpcoes
+    {
+        string[] nome = new string[15];
+        int[] cpf = new int[15];
+        int[] agencia = new int[15];
+        int[] conta = new int[15];
+        int[] pref = new int[15];
+        int i = 0; 
+
+        public void VerOpcoes()
+        {
+
+            int opcao = 0;
+
+
+
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("MENU DE OPÇÕES: DIGITE:");
+                Console.WriteLine("1 - Se cadastrar.");
+                Console.WriteLine("2 - Alterar cadastro.");
+                Console.WriteLine("3 - Iniciar o atendimento.");
+                Console.WriteLine("ESCOLHA SUA OPÇÃO");
+                opcao = int.Parse(Console.ReadLine());
+                Console.Clear();
+
+                switch (opcao)
+                {
+                    case 1:
+                        registrar();
+                        break;
+
+                    case 2:
+                        alterar();
+                        break;
+
+                    case 3:
+                        if (nome[0] != null)
+                        {
+                            Console.WriteLine("Chame o(a) " + nome[0]);
+                            int p = 0, o = 1;
+                            i--;
+                            while (nome[p] != null)
+                            {
+                                nome[p] = nome[o];
+                                pref[p] = pref[o];
+                                cpf[p] = cpf[0];
+                                agencia[p] = agencia[o];
+                                conta[p] = conta[o];
+                                p++;
+                                o++;
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("A fila não tem niguem");
+                        }
+                        Console.ReadKey();
+                        break;
+                        
+                }
+            } while (opcao != 3);
+        }
+        public void registrar()
+        {
+            Console.WriteLine("Vamos iniciar seu cadastro.");
+            Console.WriteLine("Digite o nome");
+            nome[i] = Console.ReadLine();
+            Console.WriteLine("É preferencial?");
+            Console.WriteLine("Digite 1 se for preferencial e 2 se não for.");
+            pref[i] = int.Parse (Console.ReadLine());
+            Console.WriteLine("Digite o CPF.");
+            cpf[i] = int.Parse(Console.ReadLine());
+            Console.WriteLine("Digite o número da agência.");
+            agencia[i] = int.Parse(Console.ReadLine());
+            Console.WriteLine("Digite o número da conta.");
+            conta[i] = int.Parse(Console.ReadLine());
+            Console.WriteLine("Cadastro realizado com sucesso!");
+            if(i != 0)
+            {
+                int c = i - 1, t = i;
+                if (pref[c] == 2 && pref[t] == 1)
+                {
+                    c--;
+                    t--; 
+                }
+            }
+            i++;
+        }
+
+        public void alterar()
+        {
+            Console.WriteLine("De quem deseja alterar o cadastro?");
+            int exe = 0, exe1 = 1;
+            while (nome[exe] != null)
+            {
+                Console.WriteLine(exe1 + "- " + nome[exe]);
+                exe++;
+                exe1++;
+            }
+            int q = int.Parse(Console.ReadLine());
+            q--;
+            Console.WriteLine("Deseja alterar o Nome? Digite 1 para sim e 2 para não.");
+            int nome1 = int.Parse(Console.ReadLine());
+            if(nome1 == 1)
+            {
+                Console.WriteLine("Digite um outro nome.");
+                nome[q] = Console.ReadLine();
+            }
+            Console.WriteLine("Deseja alterar se é Preferencial? Digite 1 para sim e 2 para não.");
+            int pref1 = int.Parse(Console.ReadLine());
+            if (pref1 == 1)
+            {
+                Console.WriteLine("Digite se é preferencial.");
+               pref[q] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("Deseja alterar o CPF? Digite 1 para sim e 2 para não.");
+            int cpf1 = int.Parse(Console.ReadLine());
+            if (cpf1 == 1)
+            {
+                Console.WriteLine("Digite um outro CPF.");
+                cpf[q] = int.Parse(Console.ReadLine();
+            }
+            Console.WriteLine("Deseja alterar o número da agência? Digite 1 para sim e 2 para não.");
+            int agencia1 = int.Parse(Console.ReadLine());
+            if (agencia1 == 1)
+            {
+                Console.WriteLine("Digite um outro número de agência.");
+                agencia[q] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("Deseja alterar o número da conta? Digite 1 para sim e 2 para não.");
+            int conta1 = int.Parse(Console.ReadLine());
+            if (conta1 == 1)
+            {
+                Console.WriteLine("Digite um outro número de conta.");
+                conta[q] = int.Parse(Console.ReadLine());
+            }
+        }
+    }
+}
